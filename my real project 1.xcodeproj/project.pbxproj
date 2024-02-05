@@ -29,6 +29,7 @@
 		859723992B703F8700A08FDD /* RubNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723982B703F8700A08FDD /* RubNumberViewController.swift */; };
 		8597239B2B70473000A08FDD /* ValidateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597239A2B70473000A08FDD /* ValidateProtocol.swift */; };
 		8597239F2B70593100A08FDD /* lastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597239E2B70593100A08FDD /* lastViewController.swift */; };
+		859723A12B706ED600A08FDD /* ValidateProtocol2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723A02B706ED600A08FDD /* ValidateProtocol2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		859723982B703F8700A08FDD /* RubNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubNumberViewController.swift; sourceTree = "<group>"; };
 		8597239A2B70473000A08FDD /* ValidateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateProtocol.swift; sourceTree = "<group>"; };
 		8597239E2B70593100A08FDD /* lastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastViewController.swift; sourceTree = "<group>"; };
+		859723A02B706ED600A08FDD /* ValidateProtocol2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateProtocol2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				859722D72B666C5000A08FDD /* MakerView.swift */,
 				8597239A2B70473000A08FDD /* ValidateProtocol.swift */,
+				859723A02B706ED600A08FDD /* ValidateProtocol2.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				859723902B70390900A08FDD /* EurViewController.swift in Sources */,
 				8597237E2B6F974500A08FDD /* VisaViewController.swift in Sources */,
 				8597238E2B7038D600A08FDD /* UsdViewController.swift in Sources */,
+				859723A12B706ED600A08FDD /* ValidateProtocol2.swift in Sources */,
 				859723772B6C2EFF00A08FDD /* RegisterViewController.swift in Sources */,
 				8597239B2B70473000A08FDD /* ValidateProtocol.swift in Sources */,
 				859722C02B666AAE00A08FDD /* AppDelegate.swift in Sources */,

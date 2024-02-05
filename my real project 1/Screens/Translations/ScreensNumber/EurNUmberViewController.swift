@@ -293,14 +293,14 @@ class EurNUmberViewController: UIViewController {
     }
     
     @objc func validateamout(_ sender: UIButton) {
-        guard let amountText = myEnterMoneydTF.text,
-              let moneyValue = Int(amountText) else {
+        guard let amountText2 = myEnterMoneydTF.text,
+              let moneyValue = Int(amountText2) else {
             myTransferBT.isEnabled = false
             myTransferBT.backgroundColor = .systemGray3
             return
         }
         
-        let isMoneyValid = amountText.count >= 2
+        let isMoneyValid = amountText2.count >= 2
         
         if isMoneyValid {
             if moneyValue <= BankViewController.balance {

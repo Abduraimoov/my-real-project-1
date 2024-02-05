@@ -16,7 +16,7 @@ protocol ValidateProtocol {
 extension ValidateProtocol {
     
     func validateText(amount: String) -> Bool {
-        return amount.count == 4
+        return amount.count == 16
     }
 }
 
