@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VisaViewController: UIViewController, ValidateProtocol {
+class VisaViewController: UIViewController {
     
     private lazy var myCArdLabel: UILabel = MakerView().makeLbl(text: "Transfer to visa card",
                                                                 textColor: .black,
@@ -24,7 +24,7 @@ class VisaViewController: UIViewController, ValidateProtocol {
                                                                   textSize: 13,
                                                                   ofSize: .medium)
     
-    private lazy var myMonyLabel: UILabel = MakerView().makeLbl(text: "996*****",
+    private lazy var myMonyLabel: UILabel = MakerView().makeLbl(text: "Балансе: 100000",
                                                                 textColor: .black,
                                                                 textSize: 16,
                                                                 ofSize: .medium)
@@ -234,9 +234,8 @@ class VisaViewController: UIViewController, ValidateProtocol {
             comissionLabel.topAnchor.constraint(equalTo: myEnterMoneydTF.bottomAnchor, constant: -4),
             comissionLabel.centerXAnchor.constraint(equalTo: myViewCard.centerXAnchor)
         ])
-        myEnterMoneydTF.addTarget(self, action: #selector(validateamout), for: .editingChanged)
         myTransferBT.addTarget(self, action: #selector(transferButtonTapped), for: .touchUpInside)
-        
+               
         view.addSubview(TextView)
         TextView.addSubview(myImageInText)
         TextView.addSubview(LabelInText)
@@ -263,7 +262,6 @@ class VisaViewController: UIViewController, ValidateProtocol {
             myTransferBT.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             myTransferBT.heightAnchor.constraint(equalToConstant: 50)
         ])
-        myTransferBT.addTarget(self, action: #selector(validateamout), for: .touchUpInside)
     }
     
     @objc func backButtonTapped() {
@@ -290,7 +288,8 @@ class VisaViewController: UIViewController, ValidateProtocol {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func validateamout(_ sender: UIButton) {
+    @objc func transferButtonTapped(_ sender: UIButton) {
+        
         guard let amountText = myEnterMoneydTF.text,
               let moneyValue = Int(amountText) else {
             myTransferBT.isEnabled = false
@@ -299,29 +298,34 @@ class VisaViewController: UIViewController, ValidateProtocol {
         }
         
         let isMoneyValid = amountText.count >= 2
+        let isCardNumberValid = isValidCardNumber(myNumCardTF.text)
         
-        if isMoneyValid {
-            if moneyValue <= BankViewController.balance {
-                myTransferBT.isEnabled = true
-                myTransferBT.backgroundColor = .systemBlue
-            } else {
-                myTransferBT.isEnabled = false
-                myTransferBT.backgroundColor = .systemGray3
-            }
+        if isMoneyValid && isCardNumberValid && moneyValue <= BankViewController.balance {
+            myTransferBT.isEnabled = true
+            myTransferBT.backgroundColor = .systemBlue
+            
+            let vc = lastViewController()
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             myTransferBT.isEnabled = false
             myTransferBT.backgroundColor = .systemGray3
         }
     }
-
-    @objc func transferButtonTapped(_ sender: UIButton) {
-        guard myTransferBT.isEnabled else {
-            
-            return
+    
+    func isValidCardNumber(_ cardNumber: String?) -> Bool {
+        guard let cardNumber = cardNumber else {
+            return false         }
+        let strippedCardNumber = cardNumber.replacingOccurrences(of: " ", with: "")
+        
+        guard strippedCardNumber.count == 16 else {
+            return false
         }
         
-        let vc = lastViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard strippedCardNumber.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil else {
+            return false
+        }
+        
+        return true
     }
     
 }

@@ -24,7 +24,7 @@ class RubViewController: UIViewController {
                                                                   textSize: 13,
                                                                   ofSize: .medium)
     
-    private lazy var myMonyLabel: UILabel = MakerView().makeLbl(text: "996*****",
+    private lazy var myMonyLabel: UILabel = MakerView().makeLbl(text: "Балансе: 100000",
                                                                 textColor: .black,
                                                                 textSize: 16,
                                                                 ofSize: .medium)
@@ -179,9 +179,6 @@ class RubViewController: UIViewController {
             myNumCardTF.heightAnchor.constraint(equalToConstant: 40)
         ])
         
-        myEnterMoneydTF.addTarget(self, action: #selector(validateamout), for: .editingChanged)
-        myTransferBT.addTarget(self, action: #selector(transferButtonTapped), for: .touchUpInside)
-        
         view.addSubview(myWellView)
         myWellView.addSubview(myKgzBt)
         myWellView.addSubview(myUSDBt)
@@ -263,7 +260,7 @@ class RubViewController: UIViewController {
             myTransferBT.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             myTransferBT.heightAnchor.constraint(equalToConstant: 50)
         ])
-        myTransferBT.addTarget(self, action: #selector(validateamout), for: .touchUpInside)
+        myTransferBT.addTarget(self, action: #selector(transferButtonTapped5), for: .touchUpInside)
     }
     
     
@@ -324,6 +321,46 @@ class RubViewController: UIViewController {
         
         let vc = lastViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func transferButtonTapped5(_ sender: UIButton) {
+        
+        guard let amountText = myEnterMoneydTF.text,
+              let moneyValue = Int(amountText) else {
+            myTransferBT.isEnabled = false
+            myTransferBT.backgroundColor = .systemGray3
+            return
+        }
+        
+        let isMoneyValid = amountText.count >= 2
+        let isCardNumberValid = isValidCardNumber(myNumCardTF.text)
+        
+        if isMoneyValid && isCardNumberValid && moneyValue <= BankViewController.balance {
+            myTransferBT.isEnabled = true
+            myTransferBT.backgroundColor = .systemBlue
+            
+            let vc = lastViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            myTransferBT.isEnabled = false
+            myTransferBT.backgroundColor = .systemGray3
+        }
+    }
+    
+    func isValidCardNumber(_ cardNumber: String?) -> Bool {
+        guard let cardNumber = cardNumber else {
+            return false         }
+        let strippedCardNumber = cardNumber.replacingOccurrences(of: " ", with: "")
+        
+        guard strippedCardNumber.count == 16 else {
+            return false
+        }
+        
+        guard strippedCardNumber.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil else {
+            return false
+        }
+        
+        return true
     }
     
 }
