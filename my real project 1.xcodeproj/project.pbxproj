@@ -9,21 +9,53 @@
 /* Begin PBXBuildFile section */
 		859722C02B666AAE00A08FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859722BF2B666AAE00A08FDD /* AppDelegate.swift */; };
 		859722C22B666AAE00A08FDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859722C12B666AAE00A08FDD /* SceneDelegate.swift */; };
-		859722C42B666AAE00A08FDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859722C32B666AAE00A08FDD /* ViewController.swift */; };
-		859722C72B666AAE00A08FDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859722C52B666AAE00A08FDD /* Main.storyboard */; };
+		859722C42B666AAE00A08FDD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859722C32B666AAE00A08FDD /* MainViewController.swift */; };
 		859722C92B666AB000A08FDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859722C82B666AB000A08FDD /* Assets.xcassets */; };
 		859722CC2B666AB000A08FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859722CA2B666AB000A08FDD /* LaunchScreen.storyboard */; };
+		859722D82B666C5000A08FDD /* MakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859722D72B666C5000A08FDD /* MakerView.swift */; };
+		859723752B6C1C1900A08FDD /* SecondMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723742B6C1C1900A08FDD /* SecondMainViewController.swift */; };
+		859723772B6C2EFF00A08FDD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723762B6C2EFF00A08FDD /* RegisterViewController.swift */; };
+		859723792B6C3D2E00A08FDD /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723782B6C3D2E00A08FDD /* EmailViewController.swift */; };
+		8597237B2B6C3D4B00A08FDD /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597237A2B6C3D4B00A08FDD /* BankViewController.swift */; };
+		8597237E2B6F974500A08FDD /* VisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597237D2B6F974500A08FDD /* VisaViewController.swift */; };
+		859723802B701D2A00A08FDD /* MBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597237F2B701D2A00A08FDD /* MBankViewController.swift */; };
+		859723822B701D8F00A08FDD /* QiwiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723812B701D8F00A08FDD /* QiwiViewController.swift */; };
+		859723842B701DA800A08FDD /* KicbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723832B701DA800A08FDD /* KicbViewController.swift */; };
+		8597238E2B7038D600A08FDD /* UsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597238D2B7038D600A08FDD /* UsdViewController.swift */; };
+		859723902B70390900A08FDD /* EurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597238F2B70390900A08FDD /* EurViewController.swift */; };
+		859723922B70393100A08FDD /* RubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723912B70393100A08FDD /* RubViewController.swift */; };
+		859723952B703EF200A08FDD /* UsdNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723942B703EF200A08FDD /* UsdNumberViewController.swift */; };
+		859723972B703F5900A08FDD /* EurNUmberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723962B703F5900A08FDD /* EurNUmberViewController.swift */; };
+		859723992B703F8700A08FDD /* RubNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859723982B703F8700A08FDD /* RubNumberViewController.swift */; };
+		8597239B2B70473000A08FDD /* ValidateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597239A2B70473000A08FDD /* ValidateProtocol.swift */; };
+		8597239F2B70593100A08FDD /* lastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597239E2B70593100A08FDD /* lastViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		859722BC2B666AAE00A08FDD /* my real project 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my real project 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		859722BF2B666AAE00A08FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859722C12B666AAE00A08FDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		859722C32B666AAE00A08FDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		859722C62B666AAE00A08FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		859722C32B666AAE00A08FDD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		859722C82B666AB000A08FDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		859722CB2B666AB000A08FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		859722CD2B666AB000A08FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		859722D72B666C5000A08FDD /* MakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerView.swift; sourceTree = "<group>"; };
+		859723742B6C1C1900A08FDD /* SecondMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMainViewController.swift; sourceTree = "<group>"; };
+		859723762B6C2EFF00A08FDD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		859723782B6C3D2E00A08FDD /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		8597237A2B6C3D4B00A08FDD /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
+		8597237D2B6F974500A08FDD /* VisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaViewController.swift; sourceTree = "<group>"; };
+		8597237F2B701D2A00A08FDD /* MBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBankViewController.swift; sourceTree = "<group>"; };
+		859723812B701D8F00A08FDD /* QiwiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiwiViewController.swift; sourceTree = "<group>"; };
+		859723832B701DA800A08FDD /* KicbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KicbViewController.swift; sourceTree = "<group>"; };
+		8597238D2B7038D600A08FDD /* UsdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsdViewController.swift; sourceTree = "<group>"; };
+		8597238F2B70390900A08FDD /* EurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurViewController.swift; sourceTree = "<group>"; };
+		859723912B70393100A08FDD /* RubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubViewController.swift; sourceTree = "<group>"; };
+		859723942B703EF200A08FDD /* UsdNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsdNumberViewController.swift; sourceTree = "<group>"; };
+		859723962B703F5900A08FDD /* EurNUmberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurNUmberViewController.swift; sourceTree = "<group>"; };
+		859723982B703F8700A08FDD /* RubNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubNumberViewController.swift; sourceTree = "<group>"; };
+		8597239A2B70473000A08FDD /* ValidateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateProtocol.swift; sourceTree = "<group>"; };
+		8597239E2B70593100A08FDD /* lastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +88,87 @@
 		859722BE2B666AAE00A08FDD /* my real project 1 */ = {
 			isa = PBXGroup;
 			children = (
-				859722BF2B666AAE00A08FDD /* AppDelegate.swift */,
-				859722C12B666AAE00A08FDD /* SceneDelegate.swift */,
-				859722C32B666AAE00A08FDD /* ViewController.swift */,
-				859722C52B666AAE00A08FDD /* Main.storyboard */,
-				859722C82B666AB000A08FDD /* Assets.xcassets */,
-				859722CA2B666AB000A08FDD /* LaunchScreen.storyboard */,
+				859722D62B666C3700A08FDD /* Models */,
+				859722D52B666B4A00A08FDD /* Delegate */,
+				859722D42B666B4000A08FDD /* Screens */,
+				859722D32B666B2700A08FDD /* recourse */,
 				859722CD2B666AB000A08FDD /* Info.plist */,
 			);
 			path = "my real project 1";
+			sourceTree = "<group>";
+		};
+		859722D32B666B2700A08FDD /* recourse */ = {
+			isa = PBXGroup;
+			children = (
+				859722C82B666AB000A08FDD /* Assets.xcassets */,
+				859722CA2B666AB000A08FDD /* LaunchScreen.storyboard */,
+			);
+			path = recourse;
+			sourceTree = "<group>";
+		};
+		859722D42B666B4000A08FDD /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				859722C32B666AAE00A08FDD /* MainViewController.swift */,
+				859723742B6C1C1900A08FDD /* SecondMainViewController.swift */,
+				859723762B6C2EFF00A08FDD /* RegisterViewController.swift */,
+				859723782B6C3D2E00A08FDD /* EmailViewController.swift */,
+				8597237A2B6C3D4B00A08FDD /* BankViewController.swift */,
+				8597239E2B70593100A08FDD /* lastViewController.swift */,
+				8597237C2B6F970E00A08FDD /* Translations */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		859722D52B666B4A00A08FDD /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				859722BF2B666AAE00A08FDD /* AppDelegate.swift */,
+				859722C12B666AAE00A08FDD /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		859722D62B666C3700A08FDD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				859722D72B666C5000A08FDD /* MakerView.swift */,
+				8597239A2B70473000A08FDD /* ValidateProtocol.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8597237C2B6F970E00A08FDD /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				8597237D2B6F974500A08FDD /* VisaViewController.swift */,
+				8597237F2B701D2A00A08FDD /* MBankViewController.swift */,
+				859723812B701D8F00A08FDD /* QiwiViewController.swift */,
+				859723832B701DA800A08FDD /* KicbViewController.swift */,
+				859723932B703EA100A08FDD /* ScreensNumber */,
+				8597238C2B7038B800A08FDD /* CardNumber */,
+			);
+			path = Translations;
+			sourceTree = "<group>";
+		};
+		8597238C2B7038B800A08FDD /* CardNumber */ = {
+			isa = PBXGroup;
+			children = (
+				8597238D2B7038D600A08FDD /* UsdViewController.swift */,
+				8597238F2B70390900A08FDD /* EurViewController.swift */,
+				859723912B70393100A08FDD /* RubViewController.swift */,
+			);
+			path = CardNumber;
+			sourceTree = "<group>";
+		};
+		859723932B703EA100A08FDD /* ScreensNumber */ = {
+			isa = PBXGroup;
+			children = (
+				859723942B703EF200A08FDD /* UsdNumberViewController.swift */,
+				859723962B703F5900A08FDD /* EurNUmberViewController.swift */,
+				859723982B703F8700A08FDD /* RubNumberViewController.swift */,
+			);
+			path = ScreensNumber;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +231,6 @@
 			files = (
 				859722CC2B666AB000A08FDD /* LaunchScreen.storyboard in Resources */,
 				859722C92B666AB000A08FDD /* Assets.xcassets in Resources */,
-				859722C72B666AAE00A08FDD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +241,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				859722C42B666AAE00A08FDD /* ViewController.swift in Sources */,
+				859722C42B666AAE00A08FDD /* MainViewController.swift in Sources */,
+				859723822B701D8F00A08FDD /* QiwiViewController.swift in Sources */,
+				859723752B6C1C1900A08FDD /* SecondMainViewController.swift in Sources */,
+				859723992B703F8700A08FDD /* RubNumberViewController.swift in Sources */,
+				859723922B70393100A08FDD /* RubViewController.swift in Sources */,
+				859723842B701DA800A08FDD /* KicbViewController.swift in Sources */,
+				859722D82B666C5000A08FDD /* MakerView.swift in Sources */,
+				859723902B70390900A08FDD /* EurViewController.swift in Sources */,
+				8597237E2B6F974500A08FDD /* VisaViewController.swift in Sources */,
+				8597238E2B7038D600A08FDD /* UsdViewController.swift in Sources */,
+				859723772B6C2EFF00A08FDD /* RegisterViewController.swift in Sources */,
+				8597239B2B70473000A08FDD /* ValidateProtocol.swift in Sources */,
 				859722C02B666AAE00A08FDD /* AppDelegate.swift in Sources */,
+				859723802B701D2A00A08FDD /* MBankViewController.swift in Sources */,
+				8597239F2B70593100A08FDD /* lastViewController.swift in Sources */,
+				859723952B703EF200A08FDD /* UsdNumberViewController.swift in Sources */,
+				859723972B703F5900A08FDD /* EurNUmberViewController.swift in Sources */,
+				859723792B6C3D2E00A08FDD /* EmailViewController.swift in Sources */,
+				8597237B2B6C3D4B00A08FDD /* BankViewController.swift in Sources */,
 				859722C22B666AAE00A08FDD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +267,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		859722C52B666AAE00A08FDD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				859722C62B666AAE00A08FDD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		859722CA2B666AB000A08FDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,9 +408,9 @@
 				INFOPLIST_FILE = "my real project 1/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,9 +435,9 @@
 				INFOPLIST_FILE = "my real project 1/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
