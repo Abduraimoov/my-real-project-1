@@ -9,14 +9,27 @@ import UIKit
 
 protocol ValidateProtocol {
     
-    func validateText(amount: String) -> Bool
+    func validateText(_ amount: String?) -> Bool
     
 }
 
 extension ValidateProtocol {
     
-    func validateText(amount: String) -> Bool {
-        return amount.count == 16
-    }
-}
+    func validateText(_ amount: String?) -> Bool {
 
+        guard let cardNumber = amount else {
+            return false         }
+        let strippedCardNumber = cardNumber.replacingOccurrences(of: " ", with: "")
+        
+        guard strippedCardNumber.count == 16 else {
+            return false
+        }
+        
+        guard strippedCardNumber.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil else {
+            return false
+        }
+        
+        return true
+    } 
+    
+}

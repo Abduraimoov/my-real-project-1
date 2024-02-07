@@ -7,30 +7,30 @@
 
 import UIKit
 
-class EurViewController: UIViewController {
-
-    private lazy var myCArdLabel: UILabel = MakerView().makeLbl(text: "Transfer to visa card",
-                                                                textColor: .black,
-                                                                textSize: 17,
-                                                                ofSize: .medium)
+class EurViewController: UIViewController, ValidateProtocol {
     
-    private lazy var myMoneyView: UIView = MakerView().makeUIView(layerCorneradius: 16,
-                                                                  backgroundColor: .white)
+    private lazy var myCArdLabel: UILabel = MakerView.shared.makeLbl(text: "Transfer to visa card",
+                                                                     textColor: .black,
+                                                                     textSize: 17,
+                                                                     ofSize: .medium)
     
-    private lazy var myImage1: UIImageView = MakerView().makeImage(image: "icon-wallet")
+    private lazy var myMoneyView: UIView = MakerView.shared.makeUIView(layerCorneradius: 16,
+                                                                       backgroundColor: .white)
     
-    private lazy var myNumberLabel: UILabel = MakerView().makeLbl(text: "996*****",
-                                                                  textColor: .black,
-                                                                  textSize: 13,
-                                                                  ofSize: .medium)
+    private lazy var myImage1: UIImageView = MakerView.shared.makeImage(image: "icon-wallet")
     
-    private lazy var myMonyLabel: UILabel = MakerView().makeLbl(text: "Балансе: 100000",
-                                                                textColor: .black,
-                                                                textSize: 16,
-                                                                ofSize: .medium)
+    private lazy var myNumberLabel: UILabel = MakerView.shared.makeLbl(text: "996*****",
+                                                                       textColor: .black,
+                                                                       textSize: 13,
+                                                                       ofSize: .medium)
     
-    private lazy var myNumCardView: UIView = MakerView().makeUIView(layerCorneradius: 16,
-                                                                    backgroundColor: .white)
+    private lazy var myMonyLabel: UILabel = MakerView.shared.makeLbl(text: "Балансе: 100000",
+                                                                     textColor: .black,
+                                                                     textSize: 16,
+                                                                     ofSize: .medium)
+    
+    private lazy var myNumCardView: UIView = MakerView.shared.makeUIView(layerCorneradius: 16,
+                                                                         backgroundColor: .white)
     
     private lazy var myButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
@@ -43,59 +43,60 @@ class EurViewController: UIViewController {
         return view
     }()
     
-    private lazy var myNumCardTF: UITextField = MakerView().makeTF(placeholder: "9417 **** enter a card number",
-                                                                   borderColor: UIColor.white.cgColor,
-                                                                   backgroundColor: .white)
+    private lazy var myNumCardTF: UITextField = MakerView.shared.makeTF(placeholder: "9417 **** enter a card number",
+                                                                        borderColor: UIColor.white.cgColor,
+                                                                        backgroundColor: .white)
     
-    private lazy var myWellView: UIView = MakerView().makeUIView(layerCorneradius: 10,
-                                                                 backgroundColor: .systemGray3)
+    private lazy var myWellView: UIView = MakerView.shared.makeUIView(layerCorneradius: 10,
+                                                                      backgroundColor: .systemGray3)
     
-    private lazy var myKgzBt: UIButton = MakerView().makeBTN(title: "Kgz",
-                                                             for: .normal,
-                                                             colorBT: .black,
-                                                             backgroundColorBT: .systemGray3,
-                                                             layerCornerBT: 10)
+    private lazy var myKgzBt: UIButton = MakerView.shared.makeBTN(title: "Kgz",
+                                                                  for: .normal,
+                                                                  colorBT: .black,
+                                                                  backgroundColorBT: .systemGray3,
+                                                                  layerCornerBT: 10)
     
-    private lazy var myUSDBt: UIButton = MakerView().makeBTN(title: "Usd",
-                                                             for: .normal,
-                                                             colorBT: .black,
-                                                             backgroundColorBT: .systemGray3,
-                                                             layerCornerBT: 10)
+    private lazy var myUSDBt: UIButton = MakerView.shared.makeBTN(title: "Usd",
+                                                                  for: .normal,
+                                                                  colorBT: .black,
+                                                                  backgroundColorBT: .systemGray3,
+                                                                  layerCornerBT: 10)
     
-    private lazy var myEURBt: UIButton = MakerView().makeBTN(title: "Eur",
-                                                             for: .normal,
-                                                             colorBT: .black,
-                                                             backgroundColorBT: .white,
-                                                             layerCornerBT: 10)
+    private lazy var myEURBt: UIButton = MakerView.shared.makeBTN(title: "Eur",
+                                                                  for: .normal,
+                                                                  colorBT: .black,
+                                                                  backgroundColorBT: .white,
+                                                                  layerCornerBT: 10)
     
-    private lazy var myRUBBt: UIButton = MakerView().makeBTN(title: "Rub",
-                                                             for: .normal,
-                                                             colorBT: .black,
-                                                             backgroundColorBT: .systemGray3,
-                                                             layerCornerBT: 10)
+    private lazy var myRUBBt: UIButton = MakerView.shared.makeBTN(title: "Rub",
+                                                                  for: .normal,
+                                                                  colorBT: .black,
+                                                                  backgroundColorBT: .systemGray3,
+                                                                  layerCornerBT: 10)
     
-    private lazy var myViewCard: UIView = MakerView().makeUIView(layerCorneradius: 20,
-                                                                 backgroundColor: .white)
+    private lazy var myViewCard: UIView = MakerView.shared.makeUIView(layerCorneradius: 20,
+                                                                      backgroundColor: .white)
     
-    private lazy var myEnterMoneydTF: UITextField = MakerView().makeTF(placeholder: "0 €",
-                                                                       borderColor: UIColor.white.cgColor,
-                                                                       backgroundColor: .white)
+    private lazy var myEnterMoneydTF: UITextField = MakerView.shared.makeTF(placeholder: "0 €",
+                                                                            borderColor: UIColor.white.cgColor,
+                                                                            backgroundColor: .white,
+                                                                            alignment: .center)
     
-    private lazy var comissionLabel: UILabel = MakerView().makeLbl(text: "Comission 0,00 €",
-                                                                   textColor: .black,
-                                                                   textSize: 13,
-                                                                   ofSize: .medium)
+    private lazy var comissionLabel: UILabel = MakerView.shared.makeLbl(text: "Comission 0,00 €",
+                                                                        textColor: .black,
+                                                                        textSize: 13,
+                                                                        ofSize: .medium)
     
-    private lazy var TextView: UIView = MakerView().makeUIView(layerCorneradius: 20,
-                                                               backgroundColor: .white)
+    private lazy var TextView: UIView = MakerView.shared.makeUIView(layerCorneradius: 20,
+                                                                    backgroundColor: .white)
     
-    private lazy var myImageInText: UIImageView = MakerView().makeImage(image: "question2")
+    private lazy var myImageInText: UIImageView = MakerView.shared.makeImage(image: "question2")
     
-    private lazy var LabelInText: UILabel = MakerView().makeLbl(text: "If the card owner is incorrectly indicated, the issuing bank may refuse the transfer",
-                                                                textColor: .black,
-                                                                textSize: 13,
-                                                                ofSize: .medium,
-                                                                numberOfLines: 3)
+    private lazy var LabelInText: UILabel = MakerView.shared.makeLbl(text: "If the card owner is incorrectly indicated, the issuing bank may refuse the transfer",
+                                                                     textColor: .black,
+                                                                     textSize: 13,
+                                                                     ofSize: .medium,
+                                                                     numberOfLines: 3)
     
     private lazy var myTransferBT: UIButton = {
         let but = UIButton(type: .system)
@@ -225,7 +226,7 @@ class EurViewController: UIViewController {
             myViewCard.heightAnchor.constraint(equalToConstant: 90),
             
             myEnterMoneydTF.topAnchor.constraint(equalTo: myViewCard.topAnchor, constant: 20),
-            myEnterMoneydTF.leadingAnchor.constraint(equalTo: myViewCard.leadingAnchor, constant: 150),
+            myEnterMoneydTF.centerXAnchor.constraint(equalTo: myViewCard.centerXAnchor),
             myEnterMoneydTF.widthAnchor.constraint(equalToConstant: 100),
             myEnterMoneydTF.heightAnchor.constraint(equalToConstant: 50),
             
@@ -259,7 +260,9 @@ class EurViewController: UIViewController {
             myTransferBT.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             myTransferBT.heightAnchor.constraint(equalToConstant: 50)
         ])
+        myNumCardTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         myTransferBT.addTarget(self, action: #selector(transferButtonTapped4), for: .touchUpInside)
+        myEnterMoneydTF.addTarget(self, action: #selector(validateamout), for: .editingChanged)
     }
     
     
@@ -282,7 +285,7 @@ class EurViewController: UIViewController {
         let vc = UsdViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     @objc func RubTapped(_ sender: UIButton) {
         let vc = RubViewController()
         navigationController?.pushViewController(vc, animated: true)
@@ -311,28 +314,23 @@ class EurViewController: UIViewController {
             myTransferBT.backgroundColor = .systemGray3
         }
     }
-
-    @objc func transferButtonTapped(_ sender: UIButton) {
-        guard myTransferBT.isEnabled else {
-            
-            return
-        }
-        
-        let vc = lastViewController()
-        navigationController?.pushViewController(vc, animated: true)
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        let isCardNumberValid = self.validateText(myNumCardTF.text)
+        myTransferBT.isEnabled = isCardNumberValid
     }
     
+    
     @objc func transferButtonTapped4(_ sender: UIButton) {
-        
         guard let amountText = myEnterMoneydTF.text,
-              let moneyValue = Int(amountText) else {
+              let moneyValue = Int(amountText), amountText.count >= 2 else {
             myTransferBT.isEnabled = false
             myTransferBT.backgroundColor = .systemGray3
             return
         }
         
         let isMoneyValid = amountText.count >= 2
-        let isCardNumberValid = isValidCardNumber(myNumCardTF.text)
+        let isCardNumberValid = self.validateText(myNumCardTF.text)
         
         if isMoneyValid && isCardNumberValid && moneyValue <= BankViewController.balance {
             myTransferBT.isEnabled = true
@@ -344,22 +342,11 @@ class EurViewController: UIViewController {
             myTransferBT.isEnabled = false
             myTransferBT.backgroundColor = .systemGray3
         }
-    }
-    
-    func isValidCardNumber(_ cardNumber: String?) -> Bool {
-        guard let cardNumber = cardNumber else {
-            return false         }
-        let strippedCardNumber = cardNumber.replacingOccurrences(of: " ", with: "")
-        
-        guard strippedCardNumber.count == 16 else {
-            return false
+        if isMoneyValid && isCardNumberValid && moneyValue <= BankViewController.balance {
+            myTransferBT.isEnabled = true
+            myTransferBT.backgroundColor = .systemBlue
+            
         }
-        
-        guard strippedCardNumber.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil else {
-            return false
-        }
-        
-        return true
     }
     
 }

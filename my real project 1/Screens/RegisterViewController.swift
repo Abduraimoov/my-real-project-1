@@ -9,54 +9,54 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    private lazy var myImage1: UIImageView = MakerView().makeImage(image: "image")
+    private lazy var myImage1: UIImageView = MakerView.shared.makeImage(image: "image")
     
-    private lazy var myRegisterView: UIView = MakerView().makeUIView(layerCorneradius: 16)
-
-    private lazy var myStackVw3: UIStackView = MakerView().makerStack(axis: .horizontal,
-                                                                      spacing: 5,
-                                                                      alignment: .center,
-                                                                      layerCorneradius: 20,
-                                                                      backgroundColor: .systemMint)
+    private lazy var myRegisterView: UIView = MakerView.shared.makeUIView(layerCorneradius: 16)
     
-    private lazy var ButtonLeadingInStactVW: UIButton = MakerView().makeBTN(title: "Email",
-                                                                     for: .normal,
-                                                                     colorBT: .white,
-                                                                     backgroundColorBT: .systemMint,
-                                                                     layerCornerBT: 16)
+    private lazy var myStackVw3: UIStackView = MakerView.shared.makerStack(axis: .horizontal,
+                                                                           spacing: 5,
+                                                                           alignment: .center,
+                                                                           layerCorneradius: 20,
+                                                                           backgroundColor: .systemMint)
     
-    private lazy var ButtonTraelingInStactVW: UIButton = MakerView().makeBTN(title: "Phone Number",
-                                                                     for: .normal,
-                                                                     colorBT: .black,
-                                                                     backgroundColorBT: .systemYellow,
-                                                                     layerCornerBT: 16)
+    private lazy var ButtonLeadingInStactVW: UIButton = MakerView.shared.makeBTN(title: "Email",
+                                                                                 for: .normal,
+                                                                                 colorBT: .white,
+                                                                                 backgroundColorBT: .systemMint,
+                                                                                 layerCornerBT: 16)
     
-    private lazy var myLabelView2: UILabel = MakerView().makeLbl(text: "Login With Phone Number",
-                                                                 textColor: .black,
-                                                                 textSize: 16,
-                                                                 ofSize: .light)
-                                                           
-    private lazy var myNumberTF: UITextField = MakerView().makeTF(placeholder: "+996 Enter Number")
+    private lazy var ButtonTraelingInStactVW: UIButton = MakerView.shared.makeBTN(title: "Phone Number",
+                                                                                  for: .normal,
+                                                                                  colorBT: .black,
+                                                                                  backgroundColorBT: .systemYellow,
+                                                                                  layerCornerBT: 16)
     
-    private lazy var btGetOpt: UIButton = MakerView().makeBTN(title: "Get Opt",
-                                                                     for: .normal,
-                                                                     colorBT: .black,
-                                                                     backgroundColorBT: .systemYellow,
-                                                                     layerCornerBT: 16)
+    private lazy var myLabelView2: UILabel = MakerView.shared.makeLbl(text: "Login With Phone Number",
+                                                                      textColor: .black,
+                                                                      textSize: 16,
+                                                                      ofSize: .light)
     
-    private lazy var labelInRegisterVW: UILabel = MakerView().makeLbl(text: "Don’t have account ? Create Account",
-                                                                 textColor: .black,
-                                                                 textSize: 12,
-                                                                 ofSize: .light)
+    private lazy var myNumberTF: UITextField = MakerView.shared.makeTF(placeholder: "+996 Enter Number")
     
-    private lazy var myBottomImage1: UIImageView = MakerView().makeImage(image: "image1")
+    private lazy var btGetOpt: UIButton = MakerView.shared.makeBTN(title: "Get Opt",
+                                                                   for: .normal,
+                                                                   colorBT: .black,
+                                                                   backgroundColorBT: .systemYellow,
+                                                                   layerCornerBT: 16)
     
-    private lazy var myBottomImage2: UIImageView = MakerView().makeImage(image: "image2")
+    private lazy var labelInRegisterVW: UILabel = MakerView.shared.makeLbl(text: "Don’t have account ? Create Account",
+                                                                           textColor: .black,
+                                                                           textSize: 12,
+                                                                           ofSize: .light)
     
-    private lazy var myBottomImage3: UIImageView = MakerView().makeImage(image: "image3")
+    private lazy var myBottomImage1: UIImageView = MakerView.shared.makeImage(image: "image1")
+    
+    private lazy var myBottomImage2: UIImageView = MakerView.shared.makeImage(image: "image2")
+    
+    private lazy var myBottomImage3: UIImageView = MakerView.shared.makeImage(image: "image3")
     
     
-                                                                      
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -177,6 +177,6 @@ class RegisterViewController: UIViewController {
         let vc = EmailViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
- 
-
+    
+    
 }

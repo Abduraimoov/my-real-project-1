@@ -9,6 +9,8 @@ import UIKit
 
 class MakerView {
     
+    static let shared = MakerView()
+    
     func makeBTN(title: String = "",
                  for state: UIControl.State = .normal,
                  colorBT: UIColor = .blue,
@@ -82,11 +84,15 @@ class MakerView {
                 cornerRadius: CGFloat = 16,
                 borderColor: CGColor = UIColor.black.cgColor,
                 borderWidth: CGFloat = 1,
-                backgroundColor: UIColor = .white) -> UITextField {
+                backgroundColor: UIColor = .white,
+                alignment: NSTextAlignment? = nil) -> UITextField {
         let tf = UITextField()
         tf.placeholder = placeholder
         tf.keyboardType = keyboardType
         tf.backgroundColor = backgroundColor
+        if let alignment = alignment {
+            tf.textAlignment = alignment
+        }
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 5))
         tf.leftView = view
         tf.leftViewMode = leftViewMode
@@ -98,8 +104,3 @@ class MakerView {
     }
 
 }
-
-
-
-
-

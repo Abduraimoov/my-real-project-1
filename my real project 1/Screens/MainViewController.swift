@@ -9,82 +9,82 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private lazy var myImage1: UIImageView = MakerView().makeImage(image: "image")
+    private lazy var myImage1: UIImageView = MakerView.shared.makeImage(image: "image")
     
-    private lazy var myBtSkip: UIButton = MakerView().makeBTN(title: "Skip",
-                                                              colorBT: .systemOrange)
+    private lazy var myBtSkip: UIButton = MakerView.shared.makeBTN(title: "Skip",
+                                                                   colorBT: .systemOrange)
     
-    private lazy var myImage2: UIImageView = MakerView().makeImage(image: "telephone")
+    private lazy var myImage2: UIImageView = MakerView.shared.makeImage(image: "telephone")
     
-    private lazy var myView2: UIView = MakerView().makeUIView(layerCorneradius: 16)
+    private lazy var myView2: UIView = MakerView.shared.makeUIView(layerCorneradius: 16)
     
-    private lazy var myImageInView: UIImageView = MakerView().makeImage(image: "imageinview")
+    private lazy var myImageInView: UIImageView = MakerView.shared.makeImage(image: "imageinview")
     
-    private lazy var myLabelView2: UILabel = MakerView().makeLbl(text: "Achieve your goals",
-                                                                 textColor: .black,
-                                                                 textSize: 10,
-                                                                 ofSize: .bold)
+    private lazy var myLabelView2: UILabel = MakerView.shared.makeLbl(text: "Achieve your goals",
+                                                                      textColor: .black,
+                                                                      textSize: 10,
+                                                                      ofSize: .bold)
     
-    private lazy var myImagelll: UIImageView = MakerView().makeImage(image: "llllllll")
+    private lazy var myImagelll: UIImageView = MakerView.shared.makeImage(image: "llllllll")
     
-    private lazy var myView3: UIView = MakerView().makeUIView(layerCorneradius: 12)
+    private lazy var myView3: UIView = MakerView.shared.makeUIView(layerCorneradius: 12)
     
-    private lazy var myLblInVw3: UILabel = MakerView().makeLbl(text: "Points",
-                                                               textColor: .black,
-                                                               textSize: 10,
-                                                               ofSize: .medium)
+    private lazy var myLblInVw3: UILabel = MakerView.shared.makeLbl(text: "Points",
+                                                                    textColor: .black,
+                                                                    textSize: 10,
+                                                                    ofSize: .medium)
     
-    private lazy var myStackVw3: UIStackView = MakerView().makerStack(axis: .horizontal,
-                                                                      spacing: 10,
-                                                                      alignment: .center,
-                                                                      layerCorneradius: 11,
-                                                                      backgroundColor: .systemYellow)
+    private lazy var myStackVw3: UIStackView = MakerView.shared.makerStack(axis: .horizontal,
+                                                                           spacing: 10,
+                                                                           alignment: .center,
+                                                                           layerCorneradius: 11,
+                                                                           backgroundColor: .systemYellow)
     
-    private lazy var myImagevw3: UIImageView = MakerView().makeImage(image: "award_star")
+    private lazy var myImagevw3: UIImageView = MakerView.shared.makeImage(image: "award_star")
     
     private lazy var mylblVw3: UILabel = MakerView().makeLbl(text: "1.972 Points",
                                                              textColor: .black,
                                                              textSize: 10,
                                                              ofSize: .medium)
     
-    private lazy var myBottomView: UIView = MakerView().makeUIView(backgroundColor: .systemMint)
+    private lazy var myBottomView: UIView = MakerView.shared.makeUIView(backgroundColor: .systemMint)
     
-    private lazy var myBankLbl: UILabel = MakerView().makeLbl(text: "Bank Bibi the safest         and most trusted",
-                                                              textColor: .black,
-                                                              textSize: 24,
-                                                              ofSize: .bold,
-                                                              numberOfLines: 2)
+    private lazy var myBankLbl: UILabel = MakerView.shared.makeLbl(text: "Bank Bibi the safest         and most trusted",
+                                                                   textColor: .black,
+                                                                   textSize: 24,
+                                                                   ofSize: .bold,
+                                                                   numberOfLines: 2)
     
-    private lazy var myBankText: UILabel = MakerView().makeLbl(text: "Your finance work starts here. Our here to help you track and deal with speeding up your transactions.",
-                                                               textColor: .black,
-                                                               textSize: 11,
-                                                               ofSize: .light)
+    private lazy var myBankText: UILabel = MakerView.shared.makeLbl(text: "Your finance work starts here. Our here to help you track and deal with speeding up your transactions.",
+                                                                    textColor: .black,
+                                                                    textSize: 11,
+                                                                    ofSize: .light)
     
-    private lazy var myBottomStack: UIStackView = MakerView().makerStack(axis: .horizontal,
-                                                                         spacing: -1,
-                                                                         alignment: .center, backgroundColor: .systemMint)
+    private lazy var myBottomStack: UIStackView = MakerView.shared.makerStack(axis: .horizontal,
+                                                                              spacing: -1,
+                                                                              alignment: .center, backgroundColor: .systemMint)
     
-    private lazy var myLeadingLine: UILabel = MakerView().makeLbl(text: "___",
-                                                                  textColor: .black,
-                                                                  textSize: 27,
-                                                                  ofSize: .bold)
+    private lazy var myLeadingLine: UILabel = MakerView.shared.makeLbl(text: "___",
+                                                                       textColor: .black,
+                                                                       textSize: 27,
+                                                                       ofSize: .bold)
     
-    private lazy var myTrealingLine: UILabel = MakerView().makeLbl(text: ".",
-                                                                   textColor: .white,
-                                                                   textSize: 45,
-                                                                   ofSize: .bold)
+    private lazy var myTrealingLine: UILabel = MakerView.shared.makeLbl(text: ".",
+                                                                        textColor: .white,
+                                                                        textSize: 45,
+                                                                        ofSize: .bold)
     
-    private lazy var myBottomButton: UIButton = MakerView().makeBTN(title: "Get Started",
-                                                                    for: .normal,
-                                                                    colorBT: .black,
-                                                                    backgroundColorBT: .white,
-                                                                    layerCornerBT: 25)
+    private lazy var myBottomButton: UIButton = MakerView.shared.makeBTN(title: "Get Started",
+                                                                         for: .normal,
+                                                                         colorBT: .black,
+                                                                         backgroundColorBT: .white,
+                                                                         layerCornerBT: 25)
     
-    private lazy var myBottomImage1: UIImageView = MakerView().makeImage(image: "image1")
+    private lazy var myBottomImage1: UIImageView = MakerView.shared.makeImage(image: "image1")
     
-    private lazy var myBottomImage2: UIImageView = MakerView().makeImage(image: "image2")
+    private lazy var myBottomImage2: UIImageView = MakerView.shared.makeImage(image: "image2")
     
-    private lazy var myBottomImage3: UIImageView = MakerView().makeImage(image: "image3")
+    private lazy var myBottomImage3: UIImageView = MakerView.shared.makeImage(image: "image3")
     
     
     override func viewDidLoad() {

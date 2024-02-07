@@ -9,7 +9,7 @@ import UIKit
 
 class lastViewController: UIViewController {
     
-    private lazy var myImage1: UIImageView = MakerView().makeImage(image: "Group 103")
+    private lazy var myImage1: UIImageView = MakerView.shared.makeImage(image: "Group 103")
     
 
     override func viewDidLoad() {

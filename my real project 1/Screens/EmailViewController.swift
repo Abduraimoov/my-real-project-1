@@ -9,54 +9,54 @@ import UIKit
 
 class EmailViewController: UIViewController {
     
-    private lazy var myImage1: UIImageView = MakerView().makeImage(image: "image")
+    private lazy var myImage1: UIImageView = MakerView.shared.makeImage(image: "image")
     
-    private lazy var myRegisterView: UIView = MakerView().makeUIView(layerCorneradius: 16)
-
-    private lazy var myStackVw3: UIStackView = MakerView().makerStack(axis: .horizontal,
-                                                                      spacing: 5,
-                                                                      alignment: .center,
-                                                                      layerCorneradius: 20,
-                                                                      backgroundColor: .systemMint)
+    private lazy var myRegisterView: UIView = MakerView.shared.makeUIView(layerCorneradius: 16)
     
-    private lazy var ButtonLeadingInStactVW: UIButton = MakerView().makeBTN(title: "Email",
-                                                                     for: .normal,
-                                                                     colorBT: .black,
-                                                                     backgroundColorBT: .systemYellow,
-                                                                     layerCornerBT: 16)
+    private lazy var myStackVw3: UIStackView = MakerView.shared.makerStack(axis: .horizontal,
+                                                                           spacing: 5,
+                                                                           alignment: .center,
+                                                                           layerCorneradius: 20,
+                                                                           backgroundColor: .systemMint)
     
-    private lazy var ButtonTraelingInStactVW: UIButton = MakerView().makeBTN(title: "Phone Number",
-                                                                     for: .normal,
-                                                                     colorBT: .white,
-                                                                     backgroundColorBT: .systemMint,
-                                                                     layerCornerBT: 16)
+    private lazy var ButtonLeadingInStactVW: UIButton = MakerView.shared.makeBTN(title: "Email",
+                                                                                 for: .normal,
+                                                                                 colorBT: .black,
+                                                                                 backgroundColorBT: .systemYellow,
+                                                                                 layerCornerBT: 16)
     
-    private lazy var myLabelView2: UILabel = MakerView().makeLbl(text: "Login your email",
-                                                                 textColor: .black,
-                                                                 textSize: 16,
-                                                                 ofSize: .light)
-                                                           
-    private lazy var myEmailTF: UITextField = MakerView().makeTF(placeholder: "enter a @gmail.com")
+    private lazy var ButtonTraelingInStactVW: UIButton = MakerView.shared.makeBTN(title: "Phone Number",
+                                                                                  for: .normal,
+                                                                                  colorBT: .white,
+                                                                                  backgroundColorBT: .systemMint,
+                                                                                  layerCornerBT: 16)
     
-    private lazy var btGetOpt: UIButton = MakerView().makeBTN(title: "Get Opt",
-                                                                     for: .normal,
-                                                                     colorBT: .black,
-                                                                     backgroundColorBT: .systemYellow,
-                                                                     layerCornerBT: 16)
+    private lazy var myLabelView2: UILabel = MakerView.shared.makeLbl(text: "Login your email",
+                                                                      textColor: .black,
+                                                                      textSize: 16,
+                                                                      ofSize: .light)
     
-    private lazy var labelInRegisterVW: UILabel = MakerView().makeLbl(text: "Don’t have account ? Create Account",
-                                                                 textColor: .black,
-                                                                 textSize: 12,
-                                                                 ofSize: .light)
+    private lazy var myEmailTF: UITextField = MakerView.shared.makeTF(placeholder: "enter a @gmail.com")
     
-    private lazy var myBottomImage1: UIImageView = MakerView().makeImage(image: "image1")
+    private lazy var btGetOpt: UIButton = MakerView.shared.makeBTN(title: "Get Opt",
+                                                                   for: .normal,
+                                                                   colorBT: .black,
+                                                                   backgroundColorBT: .systemYellow,
+                                                                   layerCornerBT: 16)
     
-    private lazy var myBottomImage2: UIImageView = MakerView().makeImage(image: "image2")
+    private lazy var labelInRegisterVW: UILabel = MakerView.shared.makeLbl(text: "Don’t have account ? Create Account",
+                                                                           textColor: .black,
+                                                                           textSize: 12,
+                                                                           ofSize: .light)
     
-    private lazy var myBottomImage3: UIImageView = MakerView().makeImage(image: "image3")
+    private lazy var myBottomImage1: UIImageView = MakerView.shared.makeImage(image: "image1")
+    
+    private lazy var myBottomImage2: UIImageView = MakerView.shared.makeImage(image: "image2")
+    
+    private lazy var myBottomImage3: UIImageView = MakerView.shared.makeImage(image: "image3")
     
     
-                                                                      
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -155,13 +155,13 @@ class EmailViewController: UIViewController {
             myBottomImage3.widthAnchor.constraint(equalToConstant: 67)
         ])
     }
-
+    
     private func emailKGZ() -> Bool {
         let countryEmail = "@gmail.com"
         guard let yourEmail = myEmailTF.text else { return false }
         return yourEmail.lowercased().hasSuffix(countryEmail)
     }
-
+    
     @objc func secondView(sender: UIButton) {
         if emailKGZ() {
             myEmailTF.layer.borderWidth = 0
@@ -173,13 +173,13 @@ class EmailViewController: UIViewController {
             myEmailTF.layer.borderWidth = 2
         }
     }
-
+    
     
     @objc func emailTapped(_ sender: UIButton) {
         let vc = RegisterViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
- 
-
+    
+    
 }
 
