@@ -261,9 +261,9 @@ class MBankViewController: UIViewController, ValidateProtocol2 {
             myTransferBT.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             myTransferBT.heightAnchor.constraint(equalToConstant: 50)
         ])
-        myTransferBT.addTarget(self, action: #selector(transferMBank), for: .touchUpInside)
         myNumCardTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        myEnterMoneydTF.addTarget(self, action: #selector(validateamout), for: .editingChanged)
+        myEnterMoneydTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        myTransferBT.addTarget(self, action: #selector(transferButtonTapped), for: .touchUpInside)
     }
     
     @objc func backButtonTapped() {
@@ -290,59 +290,14 @@ class MBankViewController: UIViewController, ValidateProtocol2 {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func validateamout(_ sender: UIButton) {
-        guard let amountText2 = myEnterMoneydTF.text,
-              let moneyValue = Int(amountText2) else {
-            myTransferBT.isEnabled = false
-            myTransferBT.backgroundColor = .systemGray3
-            return
-        }
-        
-        let isMoneyValid = amountText2.count >= 2
-        
-        if isMoneyValid {
-            if moneyValue <= BankViewController.balance {
-                myTransferBT.isEnabled = true
-                myTransferBT.backgroundColor = .systemBlue
-            } else {
-                myTransferBT.isEnabled = false
-                myTransferBT.backgroundColor = .systemGray3
-            }
-        } else {
-            myTransferBT.isEnabled = false
-            myTransferBT.backgroundColor = .systemGray3
-        }
-    }
-    
     @objc func textFieldDidChange(_ textField: UITextField) {
-        let isCardNumberValid = self.validateText2(myNumCardTF.text)
-        myTransferBT.isEnabled = isCardNumberValid
+      
+        numberTranslate1(cardNumber: myNumCardTF.text, enteredMoney: myEnterMoneydTF.text, transferButton: myTransferBT)
     }
-    
-    @objc func transferMBank(_ sender: UIButton) {
-        
-        guard let amountText = myEnterMoneydTF.text,
-              let moneyValue = Int(amountText) else {
-            myTransferBT.isEnabled = false
-            myTransferBT.backgroundColor = .systemGray3
-            return
+                          
+    @objc func transferButtonTapped(_ sender: UIButton) {
+
+        numberTranslate2(amountText: myEnterMoneydTF.text, cardNumber: myNumCardTF.text, transferButton: myTransferBT, navigationController: navigationController)
         }
-        
-        let isMoneyValid = amountText.count >= 2
-        
-        let isCardNumberValid = self.validateText2(myNumCardTF.text)
-        
-        if isMoneyValid && isCardNumberValid && moneyValue <= BankViewController.balance {
-            myTransferBT.isEnabled = true
-            myTransferBT.backgroundColor = .systemBlue
-            
-            let vc = lastViewController()
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
-            myTransferBT.isEnabled = false
-            myTransferBT.backgroundColor = .systemGray3
-        }
-    }
-    
 }
 

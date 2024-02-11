@@ -10,7 +10,6 @@ import UIKit
 class VisaViewController: UIViewController, ValidateProtocol {
     
     
-    
     private lazy var myCArdLabel: UILabel = MakerView.shared.makeLbl(text: "Transfer to visa card",
                                                                      textColor: .black,
                                                                      textSize: 17,
@@ -26,7 +25,7 @@ class VisaViewController: UIViewController, ValidateProtocol {
                                                                        textSize: 13,
                                                                        ofSize: .medium)
     
-    private lazy var myMonyLabel: UILabel = MakerView.shared.makeLbl(text: "Балансе: 100000",
+    private lazy var myMonyLabel: UILabel = MakerView.shared.makeLbl(text: "Балансе: 10000",
                                                                      textColor: .black,
                                                                      textSize: 16,
                                                                      ofSize: .medium)
@@ -80,6 +79,7 @@ class VisaViewController: UIViewController, ValidateProtocol {
                                                                       backgroundColor: .white)
     
     private lazy var myEnterMoneydTF: UITextField = MakerView.shared.makeTF(placeholder: "0 C",
+                                                                            keyboardType: .numberPad,
                                                                             borderColor: UIColor.white.cgColor,
                                                                             backgroundColor: .white,
                                                                             alignment: .center)
@@ -238,9 +238,8 @@ class VisaViewController: UIViewController, ValidateProtocol {
             comissionLabel.centerXAnchor.constraint(equalTo: myViewCard.centerXAnchor)
         ])
         myNumCardTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        myEnterMoneydTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         myTransferBT.addTarget(self, action: #selector(transferButtonTapped), for: .touchUpInside)
-        myEnterMoneydTF.addTarget(self, action: #selector(validateamout), for: .editingChanged)
-        
         
         view.addSubview(TextView)
         TextView.addSubview(myImageInText)
@@ -294,64 +293,17 @@ class VisaViewController: UIViewController, ValidateProtocol {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func validateamout(_ sender: UIButton) {
-        guard let amountText = myEnterMoneydTF.text,
-              let moneyValue = Int(amountText) else {
-            myTransferBT.isEnabled = false
-            myTransferBT.backgroundColor = .systemGray3
-            return
-        }
-        
-        let isMoneyValid = amountText.count >= 2
-        
-        if isMoneyValid {
-            if moneyValue <= BankViewController.balance {
-                myTransferBT.isEnabled = true
-                myTransferBT.backgroundColor = .systemBlue
-            } else {
-                myTransferBT.isEnabled = false
-                myTransferBT.backgroundColor = .systemGray3
-            }
-        } else {
-            myTransferBT.isEnabled = false
-            myTransferBT.backgroundColor = .systemGray3
-        }
-    }
-    
     @objc func textFieldDidChange(_ textField: UITextField) {
-        let isCardNumberValid = self.validateText(myNumCardTF.text)
-        myTransferBT.isEnabled = isCardNumberValid
+      
+        updateTransferButtonState(cardNumber: myNumCardTF.text, enteredMoney: myEnterMoneydTF.text, transferButton: myTransferBT)
+
     }
-    
-    
+                          
     @objc func transferButtonTapped(_ sender: UIButton) {
-        guard let amountText = myEnterMoneydTF.text,
-              let moneyValue = Int(amountText), amountText.count >= 2 else {
-                  myTransferBT.isEnabled = false
-                  myTransferBT.backgroundColor = .systemGray3
-                  return
-              }
-        
-        let isMoneyValid = amountText.count >= 2
-        let isCardNumberValid = self.validateText(myNumCardTF.text)
-        
-        if isMoneyValid {
-            if isCardNumberValid && moneyValue <= BankViewController.balance {
-                myTransferBT.isEnabled = true
-                myTransferBT.backgroundColor = .systemBlue
-                
-                let vc = lastViewController()
-                navigationController?.pushViewController(vc, animated: true)
-            } else {
-                myTransferBT.isEnabled = false
-                myTransferBT.backgroundColor = .systemGray3
-            }
-            if isMoneyValid && isCardNumberValid && moneyValue <= BankViewController.balance {
-                myTransferBT.isEnabled = true
-                myTransferBT.backgroundColor = .systemBlue
-                
-            }
+
+        transferButtonTapped(amountText: myEnterMoneydTF.text, cardNumber: myNumCardTF.text, transferButton: myTransferBT, navigationController: navigationController)
+
         }
     }
     
-}
+

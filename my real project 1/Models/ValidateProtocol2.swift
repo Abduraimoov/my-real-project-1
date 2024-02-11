@@ -11,6 +11,10 @@ protocol ValidateProtocol2 {
     
     func validateText2(_ amount: String?) -> Bool
     
+    func numberTranslate1(cardNumber: String?, enteredMoney: String?, transferButton: UIButton)
+    
+    func numberTranslate2(amountText: String?, cardNumber: String?, transferButton: UIButton, navigationController: UINavigationController?)
+    
 }
 
 extension ValidateProtocol2 {
@@ -29,6 +33,38 @@ extension ValidateProtocol2 {
         }
         
         return true
+    }
+    
+    func numberTranslate1(cardNumber: String?, enteredMoney: String?, transferButton: UIButton) {
+        let isCardNumberValid = self.validateText2(cardNumber)
+        let isMoneyValid = enteredMoney?.count ?? 0 >= 2
+        let isEnabled = isCardNumberValid && isMoneyValid
+        
+        transferButton.isEnabled = isEnabled
+        transferButton.backgroundColor = isEnabled ? .systemBlue : .systemGray3
+    }
+    
+    func numberTranslate2(amountText: String?, cardNumber: String?, transferButton: UIButton, navigationController: UINavigationController?) {
+        guard let amountText = amountText,
+              let moneyValue = Int(amountText),
+              amountText.count >= 2 else {
+            transferButton.isEnabled = true
+            transferButton.backgroundColor = .systemBlue
+            return
+        }
+        
+        let isCardNumberValid = self.validateText2(cardNumber)
+        
+        if isCardNumberValid && moneyValue <= BankViewController.balance {
+            transferButton.isEnabled = true
+            transferButton.backgroundColor = .systemBlue
+            
+            let vc = lastViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            transferButton.isEnabled = false
+            transferButton.backgroundColor = .systemGray3
+        }
     }
 }
 
